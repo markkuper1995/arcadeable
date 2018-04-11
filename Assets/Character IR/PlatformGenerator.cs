@@ -13,14 +13,23 @@ public class PlatformGenerator : MonoBehaviour {
     public float distanceMin;
     public float distanceMax;
 
-    public GameObject[] platforms;
+    //public GameObject[] platforms;
     private int platformSelector;
+    private float[] platformWidths;
 
-    //public ObjectPooler objectPool;
+    public ObjectPooler[] objectPools;
     
 	// Use this for initialization
-	void Start () {
-		platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
+	void Start()
+    {
+        //platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
+
+        platformWidths = new float[objectPools.Length];
+
+        for (int i = 0; i < objectPools.Length; i++)
+        {
+            platformWidths[i] = objectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
+        }
 	}
 	
 	// Update is called once per frame
@@ -29,14 +38,16 @@ public class PlatformGenerator : MonoBehaviour {
         if (transform.position.x < generationPoint.position.x)
         {
             distance = Random.Range(distanceMin, distanceMax);
-            transform.position = new Vector3(transform.position.x + platformWidth + distance, transform.position.y, transform.position.z);
-            Instantiate(platform, transform.position, transform.rotation);
+            platformSelector = Random.Range(0, objectPools.Length);
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distance, transform.position.y, transform.position.z);
 
 
-            /* GameObject newPlatform = objectPool.getPooledObject();   
+            //Instantiate(/* platform */ platforms[platformSelector], transform.position, transform.rotation);
+
+            GameObject newPlatform = objectPools[platformSelector].getPooledObject();   
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
-            newPlatform.SetActive(true); */
+            newPlatform.SetActive(true);
         }
 	}
 }

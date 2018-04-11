@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D playerBody;
     private Collider2D playerCollider;
+    private Animator playerAnimator;
 
 	// Use this for initialization
 	void Start () {
         playerBody = GetComponent<Rigidbody2D>();
 
         playerCollider = GetComponent<Collider2D>(); 
+
+        playerAnimator = GetComponent<Animator>();
 		
 	}
 	
@@ -35,5 +38,8 @@ public class PlayerController : MonoBehaviour {
                 playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
             }
         }
+
+        playerAnimator.SetFloat("Speed", playerBody.velocity.x);
+        playerAnimator.SetBool("Grounded", onGround);
 	}
 }
