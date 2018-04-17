@@ -9,16 +9,18 @@ public class PlayerController : MonoBehaviour {
 
     public bool onGround;
     public LayerMask IsGround;
+    public Transform groundCheck;
+    public float groundCheckRadius;
 
     private Rigidbody2D playerBody;
-    private Collider2D playerCollider;
+    //private Collider2D playerCollider;
     private Animator playerAnimator;
 
 	// Use this for initialization
 	void Start () {
         playerBody = GetComponent<Rigidbody2D>();
 
-        playerCollider = GetComponent<Collider2D>(); 
+        //playerCollider = GetComponent<Collider2D>(); 
 
         playerAnimator = GetComponent<Animator>();
 		
@@ -27,7 +29,9 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        onGround = Physics2D.IsTouchingLayers(playerCollider, IsGround);
+        //onGround = Physics2D.IsTouchingLayers(playerCollider, IsGround);
+
+        onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, IsGround);
 
         playerBody.velocity = new Vector2(playerSpeed, playerBody.velocity.y);
 
