@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     //private Collider2D playerCollider;
     private Animator playerAnimator;
 
+    public GameManager gameManager;
+
 	// Use this for initialization
 	void Start () {
         playerBody = GetComponent<Rigidbody2D>();
@@ -46,4 +48,12 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.SetFloat("Speed", playerBody.velocity.x);
         playerAnimator.SetBool("Grounded", onGround);
 	}
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Killbox")
+        {
+            gameManager.RestartGame();
+        }
+    }
 }
