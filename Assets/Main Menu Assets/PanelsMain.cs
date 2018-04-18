@@ -12,9 +12,11 @@ public class PanelsMain : MonoBehaviour {
 
 	public void ShowPanel() {
 		panel.SetActive (true);
+		Time.timeScale = 0;
 	}
 
 	public void HidePanel() {
 		panel.SetActive (false);
+		Time.timeScale = 1;
 	}
 }
