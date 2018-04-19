@@ -8,7 +8,11 @@ public class MenuController : MonoBehaviour {
 	public GameObject panel;
 
 	public void BackToMainMenu() {
-		SceneManager.LoadScene ("MainMenu");
+		SceneManager.LoadScene("MainMenu");
+	}
+
+	public void StartGame(){
+		SceneManager.LoadScene("Infinite Runner");
 	}
 
 	public void RestartGame(){
