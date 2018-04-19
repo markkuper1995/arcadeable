@@ -6,18 +6,21 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour {
 
 	public GameObject panel;
+	public GameManager gameManager;
 
 	public void BackToMainMenu() {
 		SceneManager.LoadScene("MainMenu");
 	}
 
 	public void StartGame(){
+		Time.timeScale = 1;
 		SceneManager.LoadScene("Infinite Runner");
 	}
 
 	public void RestartGame(){
-		SceneManager.LoadScene( SceneManager.GetActiveScene().name );
+		panel.SetActive(false);
 		Time.timeScale = 1;
+		gameManager.RestartGame();
 	}
 
 	public void ResumeGame() {

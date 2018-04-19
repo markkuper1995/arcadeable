@@ -508,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1304923427}
+  gameManager: {fileID: 0}
 --- !u!114 &303111280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,6 +1093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1304923427}
+  gameManager: {fileID: 0}
 --- !u!1 &555726125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1304923427}
+  gameManager: {fileID: 0}
 --- !u!1 &936410185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 466948538}
+  gameManager: {fileID: 1413600074}
 --- !u!1 &1018016302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 466948538}
+  gameManager: {fileID: 1413600074}
 --- !u!1 &1139793114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1304923427}
+  gameManager: {fileID: 0}
 --- !u!1 &1413600073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,6 +2447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformGenerator: {fileID: 1615123325}
   player: {fileID: 339347502}
+  deathMenu: {fileID: 466948538}
 --- !u!4 &1413600075
 Transform:
   m_ObjectHideFlags: 0

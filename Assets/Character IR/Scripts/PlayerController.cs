@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.gameObject.tag == "Killbox")
         {
-            gameManager.RestartGame();
+            gameManager.Death();
         }
     }
 }

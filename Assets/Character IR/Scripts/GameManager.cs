@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 
     private ScoreManager scoreManager;
 
+	public GameObject deathMenu;
+
 	// Use this for initialization
 	void Start () {
 		platformStartPoint = platformGenerator.position;
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void Death() {
+		Time.timeScale = 0;
+		deathMenu.SetActive(true);
 	}
 
     public void RestartGame() 
