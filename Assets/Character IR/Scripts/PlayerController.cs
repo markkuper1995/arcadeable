@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D playerBody;
     //private Collider2D playerCollider;
     private Animator playerAnimator;
+    private SpriteRenderer spriteRenderer;
 
     public GameManager gameManager;
 
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour {
         //playerCollider = GetComponent<Collider2D>(); 
 
         playerAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
 		
 	}
 	
