@@ -1,4 +1,4 @@
-﻿        using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +24,9 @@ public class PlatformGenerator : MonoBehaviour {
     private float heightMax;
     public float heightMaxChange;
     private float heightChange;
+
+    private CoinGenerator coinGenerator;
+    public float randomCoinTreshold;
     
 	// Use this for initialization
 	void Start()
@@ -39,6 +42,8 @@ public class PlatformGenerator : MonoBehaviour {
 
         heightMin = transform.position.y;
         heightMax = heightMaxPoint.position.y; 
+
+        coinGenerator = FindObjectOfType<CoinGenerator>();
 	}
 	
 	// Update is called once per frame
@@ -53,7 +58,8 @@ public class PlatformGenerator : MonoBehaviour {
             if (heightChange > heightMax)
             {
                 heightChange = heightMax;
-            } else if(heightChange < heightMin) 
+            }
+            else if (heightChange < heightMin)
             {
                 heightChange = heightMin;
             }
@@ -67,6 +73,11 @@ public class PlatformGenerator : MonoBehaviour {
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
+
+            if (Random.Range(0f, 100f) < randomCoinTreshold)
+            {
+                coinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z));
+            }
         }
 	}
 }
