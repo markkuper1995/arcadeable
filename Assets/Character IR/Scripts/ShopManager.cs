@@ -27,6 +27,10 @@ public class ShopManager : MonoBehaviour {
 
 	private void SetStore() {
 		String[] characters = PlayerPrefsX.GetStringArray ("Characters");
+		if (characters.Length == 0) {
+			PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "300", "600" } );
+			PlayerPrefs.SetInt("CurrentCharacter", 0);
+		}
 		int index = 0;
 		foreach (String c in characters) {
 			Debug.Log (c);
