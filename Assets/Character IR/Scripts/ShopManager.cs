@@ -33,7 +33,6 @@ public class ShopManager : MonoBehaviour {
 		}
 		int index = 0;
 		foreach (String c in characters) {
-			Debug.Log (c);
 			int n;
 			if (int.TryParse (c, out n)) {
 				this.buttons [index].GetComponentInChildren<Text> ().text = "        " + n;
@@ -94,10 +93,9 @@ public class ShopManager : MonoBehaviour {
 				int.TryParse (button.name.Substring (button.name.Length - 1, 1), out a);
 				if (a != -1)
 					characters [a] = "In use";
-				int.TryParse (btn.name.Substring (button.name.Length - 1, 1), out b);
+				int.TryParse (btn.name.Substring (btn.name.Length - 1, 1), out b);
 				if (b != -1)
 					characters [b] = "Use";
-
 				PlayerPrefsX.SetStringArray ("Characters", characters);
 			}
 		}
