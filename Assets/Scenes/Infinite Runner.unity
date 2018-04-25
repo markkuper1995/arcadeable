@@ -292,7 +292,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 259982063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 265.12, y: 199, z: 0}
+  m_LocalPosition: {x: 377.12, y: 259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518521309}
@@ -328,7 +328,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 303111277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -351, y: 172, z: 0}
+  m_LocalPosition: {x: -463, y: 232, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1627195555}
@@ -604,7 +604,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 339347497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2d32a3ec937ea4e47a494fa4ca213484, type: 2}
   m_CullingMode: 0
@@ -1481,7 +1481,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 951011430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32, y: 199, z: 0}
+  m_LocalPosition: {x: 32, y: 259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518521309}
@@ -1900,7 +1900,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1139793114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -296, y: 199, z: 0}
+  m_LocalPosition: {x: -408, y: 259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518521309}
@@ -2424,7 +2424,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518521305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 240, z: 0}
+  m_LocalPosition: {x: 512, y: 300, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1139793117}
@@ -2472,7 +2472,7 @@ MonoBehaviour:
   platform: {fileID: 1109720818223182, guid: 24606d26ded2d96418eca50e1902641e, type: 2}
   generationPoint: {fileID: 579414845}
   distanceMin: 5
-  distanceMax: 7
+  distanceMax: 8
   objectPools:
   - {fileID: 1019708182}
   - {fileID: 314663762}
