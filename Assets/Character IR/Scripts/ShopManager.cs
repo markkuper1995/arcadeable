@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using AssemblyCSharp;
+using System;
 
 public class ShopManager : MonoBehaviour {
 
@@ -11,6 +13,7 @@ public class ShopManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.SetCoins();
+		this.SetStore();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +23,27 @@ public class ShopManager : MonoBehaviour {
 
 	private void SetCoins() {
 		AmountCoins.text = PlayerPrefs.GetInt( "Coins", 0 ).ToString();
+	}
+
+	private void SetStore() {
+		String[] characters = PlayerPrefsX.GetStringArray ("Characters");
+		int index = 0;
+		foreach (String c in characters) {
+			Debug.Log (c);
+			int n;
+			if (int.TryParse (c, out n)) {
+				this.buttons [index].GetComponentInChildren<Text> ().text = "        " + n;
+			} else {
+				foreach (Transform child in this.buttons[index].transform) {
+					if (child.name == "Text") {
+						this.buttons [index].GetComponentInChildren<Text> ().text = c;
+					} else {
+						Destroy (child.gameObject);
+					}
+				}
+			}
+			index++;
+		}
 	}
 
 	public void ToggleButton(Button button) {
@@ -34,19 +58,45 @@ public class ShopManager : MonoBehaviour {
 						Destroy (child.gameObject);
 					}
 				}
-				//button.GetComponentInChildren<Text> ().text = "Use";
-				PlayerPrefs.SetInt ( "Coins", amount-n );
-				this.SetCoins();
+
+				//Update Characters
+				int a = -1;
+				int.TryParse (button.name.Substring (button.name.Length - 1, 1), out a);
+				String[] characters = PlayerPrefsX.GetStringArray ("Characters");
+				if (a != -1)
+					characters [a] = "Use";
+				PlayerPrefsX.SetStringArray ("Characters", characters);
+
+				//Update coins
+				PlayerPrefs.SetInt ("Coins", amount - n);
+				this.SetCoins ();
+			} else {
+				//Warning
 			}
 		}
-		int character;
+		int character = -1;
 		foreach (Button btn in buttons) {
 			if (button.GetComponentInChildren<Text> ().text == "Use" && btn.GetComponentInChildren<Text> ().text == "In use") {
 				btn.GetComponentInChildren<Text> ().text = "Use";
 				button.GetComponentInChildren<Text> ().text = "In use";
 				int.TryParse ( button.name.Substring ( button.name.Length - 1, 1 ), out character );
-				PlayerPrefs.SetInt( "Character", character );
+				PlayerPrefs.SetInt( "CurrentCharacter", character );
+
+				//Update Characters
+				int a = -1;
+				int b = -1;
+				String[] characters = PlayerPrefsX.GetStringArray ("Characters");
+
+				int.TryParse (button.name.Substring (button.name.Length - 1, 1), out a);
+				if (a != -1)
+					characters [a] = "In use";
+				int.TryParse (btn.name.Substring (button.name.Length - 1, 1), out b);
+				if (b != -1)
+					characters [b] = "Use";
+
+				PlayerPrefsX.SetStringArray ("Characters", characters);
 			}
 		}
+
 	}
 }
