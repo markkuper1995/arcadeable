@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
 
     public GameManager gameManager;
 
+
+
 	// Use this for initialization
 	void Start () {
         playerBody = GetComponent<Rigidbody2D>();
@@ -28,7 +30,8 @@ public class PlayerController : MonoBehaviour {
         playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-		
+		spriteRenderer.sprite = Resources.Load<Sprite>("Mexican_1");
+        
 	}
 	
 	// Update is called once per frame
