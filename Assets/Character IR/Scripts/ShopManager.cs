@@ -39,10 +39,13 @@ public class ShopManager : MonoBehaviour {
 				this.SetCoins();
 			}
 		}
+		int character;
 		foreach (Button btn in buttons) {
 			if (button.GetComponentInChildren<Text> ().text == "Use" && btn.GetComponentInChildren<Text> ().text == "In use") {
 				btn.GetComponentInChildren<Text> ().text = "Use";
 				button.GetComponentInChildren<Text> ().text = "In use";
+				int.TryParse ( button.name.Substring ( button.name.Length - 1, 1 ), out character );
+				PlayerPrefs.SetInt( "Character", character );
 			}
 		}
 	}
