@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour {
 
 	public GameObject panel;
 	public GameManager gameManager;
+	public Button pauseButton;
 
 	public void BackToMainMenu() {
 		SceneManager.LoadScene("MainMenu");
@@ -20,16 +22,19 @@ public class MenuController : MonoBehaviour {
 	public void RestartGame(){
 		panel.SetActive(false);
 		Time.timeScale = 1;
+		pauseButton.gameObject.SetActive (true);
 		gameManager.RestartGame();
 	}
 
 	public void ResumeGame() {
 		Time.timeScale = 1;
 		panel.SetActive (false);
+		pauseButton.gameObject.SetActive (true);
 	}
 
 	public void PauseGame() {
 		Time.timeScale = 0;
+		pauseButton.gameObject.SetActive (false);
 		panel.SetActive (true);
 	}
 }

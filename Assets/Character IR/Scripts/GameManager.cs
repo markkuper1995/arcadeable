@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour {
     private ScoreManager scoreManager;
 
 	public GameObject deathMenu;
+
+	public Button pauseButton;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour {
 	public void Death() {
 		Time.timeScale = 0;
 		deathMenu.SetActive(true);
+		pauseButton.gameObject.SetActive (false);
 	}
 
     public void RestartGame() 
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour {
         player.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         player.gameObject.SetActive(true);
-
+		pauseButton.gameObject.SetActive (true);
         scoreManager.scoreCount = 0;
         scoreManager.scoreIncreasing = true;
     }
