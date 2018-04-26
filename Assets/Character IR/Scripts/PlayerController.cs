@@ -38,10 +38,12 @@ public class PlayerController : MonoBehaviour {
         if (characterInt == 0)
         {
             spriteRenderer.sprite = Resources.Load<Sprite>("Trump_1");
+            playerAnimator.runtimeAnimatorController = Resources.Load("Animations/Trump") as RuntimeAnimatorController;
         }
         else if (characterInt == 1)
         {
             spriteRenderer.sprite = Resources.Load<Sprite>("Bolt_1");
+            playerAnimator.runtimeAnimatorController = Resources.Load("Animations/Bolt") as RuntimeAnimatorController;
         }
 	}
 	
