@@ -40,7 +40,7 @@ public class PlatformGenerator : MonoBehaviour {
             platformWidths[i] = objectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
         }
 
-        heightMin = transform.position.y;
+        heightMin = transform.position.y + 2;
         heightMax = heightMaxPoint.position.y; 
 
         coinGenerator = FindObjectOfType<CoinGenerator>();
