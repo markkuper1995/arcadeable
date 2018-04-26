@@ -101,4 +101,12 @@ public class ShopManager : MonoBehaviour {
 		}
 
 	}
+
+	public void BuyCoins(int amount) {
+		//Koppeling maken met GooglePlay voor betaling
+
+		int currentAmount = PlayerPrefs.GetInt( "Coins", 0 );
+		PlayerPrefs.SetInt ("Coins", currentAmount + amount);
+		this.SetCoins ();
+	}
 }
