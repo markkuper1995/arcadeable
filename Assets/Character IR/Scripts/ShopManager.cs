@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour {
 	private void SetStore() {
 		String[] characters = PlayerPrefsX.GetStringArray ("Characters");
 		if (characters.Length == 0) {
-			PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "300", "600" } );
+			PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "10000", "20000" } );
 			PlayerPrefs.SetInt("CurrentCharacter", 0);
 		}
 		int index = 0;
@@ -104,6 +104,7 @@ public class ShopManager : MonoBehaviour {
 
 	public void BuyCoins(int amount) {
 		//Koppeling maken met GooglePlay voor betaling
+		amount = 0;
 
 		int currentAmount = PlayerPrefs.GetInt( "Coins", 0 );
 		PlayerPrefs.SetInt ("Coins", currentAmount + amount);
