@@ -19,6 +19,9 @@ public class BgObjectGenerator : MonoBehaviour {
 			int index = Random.Range (0, 5);
 			if (index == lastIndex)
 				index++;
+			if (index >= backgrounds.Length)
+				index = index - 4;
+
 			GameObject newBackground = Instantiate(backgrounds[index]);
 
 			transform.position = new Vector3(transform.position.x + Random.Range(20,50), backgrounds[index].transform.position.y, 1);
