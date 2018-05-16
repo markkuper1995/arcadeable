@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 	void Update()
     {
         //onGround = Physics2D.IsTouchingLayers(playerCollider, IsGround);
-
+	
         onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, IsGround);
 
         playerBody.velocity = new Vector2(playerSpeed, playerBody.velocity.y);
