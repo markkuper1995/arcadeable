@@ -21,11 +21,11 @@ public class CoinGenerator : MonoBehaviour {
         if (random == 1)
         {
             GameObject coinOne = coinPool.getPooledObject();
-            coinOne.transform.position = new Vector3(startPosition.x + distanceBetweenCoins, startPosition.y, startPosition.z);
+            coinOne.transform.position = new Vector3(startPosition.x + (distanceBetweenCoins / 2), startPosition.y, startPosition.z);
             coinOne.SetActive(true);
 
             GameObject coinTwo = coinPool.getPooledObject();
-            coinTwo.transform.position = new Vector3(startPosition.x - distanceBetweenCoins, startPosition.y, startPosition.z);
+            coinTwo.transform.position = new Vector3(startPosition.x - (distanceBetweenCoins / 2) , startPosition.y, startPosition.z);
             coinTwo.SetActive(true);
         }
 
