@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour {
     public float playerSpeed;
     public float jumpForce;
 
-    private int characterInt;
-
     public bool onGround;
     public LayerMask IsGround;
     public Transform groundCheck;
@@ -33,18 +31,7 @@ public class PlayerController : MonoBehaviour {
         playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        characterInt = PlayerPrefs.GetInt("CurrentCharacter");
 
-        if (characterInt == 0)
-        {
-            spriteRenderer.sprite = Resources.Load<Sprite>("Trump_1");
-            playerAnimator.runtimeAnimatorController = Resources.Load("Animations/Trump") as RuntimeAnimatorController;
-        }
-        else if (characterInt == 1)
-        {
-            spriteRenderer.sprite = Resources.Load<Sprite>("Bolt_1");
-            playerAnimator.runtimeAnimatorController = Resources.Load("Animations/Bolt") as RuntimeAnimatorController;
-        }
 	}
 	
 	// Update is called once per frame
