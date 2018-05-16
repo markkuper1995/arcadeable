@@ -16,7 +16,22 @@ public class MenuController : MonoBehaviour {
 
 	public void StartGame(){
 		Time.timeScale = 1;
-		SceneManager.LoadScene("Infinite Runner");
+		int currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter" );
+
+		switch (currentCharacter) {
+			case 0: 
+				SceneManager.LoadScene("Infinite Runner");
+				break;
+			case 1:
+				SceneManager.LoadScene("Infinite Runner - Zuck");
+				break;
+			case 2:
+				SceneManager.LoadScene("Infinite Runner - Bolt");
+				break;
+			default:
+				SceneManager.LoadScene("Infinite Runner");
+				break;
+		}
 	}
 
 	public void RestartGame(){

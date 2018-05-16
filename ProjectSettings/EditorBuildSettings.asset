@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Infinite Runner.unity
     guid: 9079dd6f319fd2546b0d8045cfba71cd
+  - enabled: 1
+    path: Assets/Scenes/Infinite Runner - Zuck.unity
+    guid: 0657c12869a298245a1c123fe9fb8d75
+  - enabled: 1
+    path: Assets/Scenes/Infinite Runner - Bolt.unity
+    guid: 680e019946231ff42ba35d218b1f53ed
