@@ -20,7 +20,6 @@ public class BgObjectGenerator : MonoBehaviour {
 			while (index == lastIndex) {
 				index = Random.Range (0, backgrounds.Length - 1);
 			}
-			Debug.Log( "Index: " + index + " LastIndex: " + lastIndex );
 			if (index != lastIndex) {
 				GameObject newBackground = Instantiate(backgrounds[index]);
 
