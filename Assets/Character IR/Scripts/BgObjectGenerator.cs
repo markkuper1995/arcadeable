@@ -20,12 +20,14 @@ public class BgObjectGenerator : MonoBehaviour {
 			while (index == lastIndex) {
 				index = Random.Range (0, backgrounds.Length - 1);
 			}
+			Debug.Log( "Index: " + index + " LastIndex: " + lastIndex );
+			if (index != lastIndex) {
+				GameObject newBackground = Instantiate(backgrounds[index]);
 
-			GameObject newBackground = Instantiate(backgrounds[index]);
-
-			transform.position = new Vector3(transform.position.x + Random.Range(20,50), backgrounds[index].transform.position.y, 1);
-			newBackground.transform.position = transform.position;
-			lastIndex = index;
+				transform.position = new Vector3(transform.position.x + Random.Range(20,50), backgrounds[index].transform.position.y, 1);
+				newBackground.transform.position = transform.position;
+				lastIndex = index;
+			}
 		}
 	}
 }
