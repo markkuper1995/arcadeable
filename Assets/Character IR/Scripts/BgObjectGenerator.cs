@@ -16,17 +16,18 @@ public class BgObjectGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (generationPoint != null && transform.position.x < generationPoint.position.x) {
-			int index = Random.Range (0, 5);
-			if (index == lastIndex)
-				index++;
-			if (index >= backgrounds.Length)
-				index = index - 4;
+			int index = Random.Range (0, backgrounds.Length - 1);
+			while (index == lastIndex) {
+				index = Random.Range (0, backgrounds.Length - 1);
+			}
+			Debug.Log( "Index: " + index + " LastIndex: " + lastIndex );
+			if (index != lastIndex) {
+				GameObject newBackground = Instantiate(backgrounds[index]);
 
-			GameObject newBackground = Instantiate(backgrounds[index]);
-
-			transform.position = new Vector3(transform.position.x + Random.Range(20,50), backgrounds[index].transform.position.y, 1);
-			newBackground.transform.position = transform.position;
-			lastIndex = index;
+				transform.position = new Vector3(transform.position.x + Random.Range(20,50), backgrounds[index].transform.position.y, 1);
+				newBackground.transform.position = transform.position;
+				lastIndex = index;
+			}
 		}
 	}
 }
