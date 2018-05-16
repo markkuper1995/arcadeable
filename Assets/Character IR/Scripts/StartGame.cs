@@ -9,6 +9,7 @@ public class StartGame : MonoBehaviour {
 	public GameObject two;
 	public GameObject one;
 
+	public static bool afterThreeTwoOne = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,9 @@ public class StartGame : MonoBehaviour {
 	}
 
 	IEnumerator ThreeTwoOne() {
+		afterThreeTwoOne = false;
+
+		three.SetActive (true);
 		two.SetActive (false);	
 		one.SetActive (false);	
 
@@ -41,7 +45,7 @@ public class StartGame : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 
 		one.SetActive (false);
-		Time.timeScale = 1;
+		afterThreeTwoOne = true;
 
 		yield return null;
 	}

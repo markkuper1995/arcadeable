@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
+		if (StartGame.afterThreeTwoOne == false)
+			return;
         //onGround = Physics2D.IsTouchingLayers(playerCollider, IsGround);
 	
         onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, IsGround);

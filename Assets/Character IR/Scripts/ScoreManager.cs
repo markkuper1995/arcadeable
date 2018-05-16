@@ -30,6 +30,9 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
+		if (StartGame.afterThreeTwoOne == false)
+			return;
+		
         if (scoreIncreasing)
         {
             scoreCount += pointsPerSecond * Time.deltaTime;
