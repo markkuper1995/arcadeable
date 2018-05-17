@@ -6,7 +6,7 @@ public class BgObjectGenerator : MonoBehaviour {
 
 	private Transform generationPoint = null;
 	public GameObject[] backgrounds;
-	private int lastIndex = 0;
+	private int lastIndex = -1;
 
 	// Use this for initialization
 	void Start () {

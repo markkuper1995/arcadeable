@@ -13,10 +13,7 @@ public class StartGame : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		three = GameObject.Find ("3");
-		two = GameObject.Find ("2");
-		one = GameObject.Find ("1");
-
+		Time.timeScale = 1;
 		StartCoroutine(ThreeTwoOne());
 	}
 	

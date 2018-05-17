@@ -3138,9 +3138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72b847723e814f469e674d2d8532a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  three: {fileID: 0}
-  two: {fileID: 0}
-  one: {fileID: 0}
+  three: {fileID: 341584799}
+  two: {fileID: 1895193937}
+  one: {fileID: 1188979435}
 --- !u!1 &1478240721
 GameObject:
   m_ObjectHideFlags: 0

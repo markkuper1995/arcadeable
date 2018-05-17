@@ -15,7 +15,6 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void StartGame(){
-		Time.timeScale = 0;
 		int currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter" );
 
 		switch (currentCharacter) {
