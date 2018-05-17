@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float playerSpeed;
+    public float increaseSpeed;
+    public float increaseSpeedMilestone;
+    private float speedMilestoneCount;
     public float jumpForce;
 
     public bool onGround;
@@ -31,17 +34,24 @@ public class PlayerController : MonoBehaviour {
         playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-
+        speedMilestoneCount = increaseSpeedMilestone;
 	}
 	
 	// Update is called once per frame
 	void Update()
     {
-		if (StartGame.afterThreeTwoOne == false)
-			return;
+        if (StartGame.afterThreeTwoOne == false)
+            return;
         //onGround = Physics2D.IsTouchingLayers(playerCollider, IsGround);
 	
         onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, IsGround);
+
+        if (transform.position.x > speedMilestoneCount)
+        {
+            speedMilestoneCount += increaseSpeedMilestone;
+            increaseSpeedMilestone = increaseSpeedMilestone * increaseSpeed;
+            playerSpeed = playerSpeed * increaseSpeed;
+        }
 
         playerBody.velocity = new Vector2(playerSpeed, playerBody.velocity.y);
 
@@ -52,6 +62,8 @@ public class PlayerController : MonoBehaviour {
                 playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
             }
         }
+
+       
 
         playerAnimator.SetFloat("Speed", playerBody.velocity.x);
         playerAnimator.SetBool("Grounded", onGround);
