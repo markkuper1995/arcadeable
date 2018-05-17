@@ -15,9 +15,9 @@ public class BackgroundGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (generationPoint != null && transform.position.x < generationPoint.position.x) {
-			GameObject newBackground = Instantiate(background);
+			GameObject newBackground = Instantiate (background);
 
-			transform.position = new Vector3(transform.position.x + 46, background.transform.position.y, 2);
+			transform.position = new Vector3 (transform.position.x + 46, background.transform.position.y, 2);
 			newBackground.transform.position = transform.position;
 		}
 	}
