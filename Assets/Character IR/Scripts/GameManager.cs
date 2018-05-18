@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour {
 
         player.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
+        player.playerSpeed = player.startPlayerSpeed;
+        player.increaseSpeedMilestone = player.startIncreaseSpeedMilestone;
         player.gameObject.SetActive(true);
 		pauseButton.gameObject.SetActive (true);
         scoreManager.scoreCount = 0;

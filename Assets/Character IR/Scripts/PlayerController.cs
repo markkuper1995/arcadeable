@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float playerSpeed;
+    public float startPlayerSpeed;
+
     public float increaseSpeed;
     public float increaseSpeedMilestone;
+    public float startIncreaseSpeedMilestone;
     private float speedMilestoneCount;
+
     public float jumpForce;
 
     public bool onGround;
@@ -35,6 +39,8 @@ public class PlayerController : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         speedMilestoneCount = increaseSpeedMilestone;
+        startPlayerSpeed = playerSpeed;
+        startIncreaseSpeedMilestone = increaseSpeedMilestone;
 	}
 	
 	// Update is called once per frame
