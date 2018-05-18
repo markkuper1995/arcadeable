@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2bff5be43f1614c82fde45ebfd3689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 7
+  playerSpeed: 7.5
   increaseSpeed: 1.05
   increaseSpeedMilestone: 50
   jumpForce: 12
