@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void StartGame(){
-		int currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter" );
+		int currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter", 0 );
 
 		switch (currentCharacter) {
 			case 0: 

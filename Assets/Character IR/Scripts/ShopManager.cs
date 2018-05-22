@@ -14,6 +14,8 @@ public class ShopManager : MonoBehaviour {
 	void Start () {
 		this.SetCoins();
 		this.SetStore();
+		PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "5000", "100000" } );
+		PlayerPrefs.SetInt("CurrentCharacter", 0);
 	}
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class ShopManager : MonoBehaviour {
 		foreach (String c in characters) {
 			int n;
 			if (int.TryParse (c, out n)) {
-				this.buttons [index].GetComponentInChildren<Text> ().text = "        " + n;
+				this.buttons [index].GetComponentInChildren<Text> ().text = "      " + n;
 			} else {
 				foreach (Transform child in this.buttons[index].transform) {
 					if (child.name == "Text") {

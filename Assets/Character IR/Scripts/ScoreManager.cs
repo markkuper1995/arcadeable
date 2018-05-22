@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using AssemblyCSharp;
 
 public class ScoreManager : MonoBehaviour {
     
@@ -17,12 +18,21 @@ public class ScoreManager : MonoBehaviour {
 
     public bool scoreIncreasing;
     
+	private float[] highscoreArray;
+	private int currentCharacter;
+
 	// Use this for initialization
 	void Start () {
-		if(PlayerPrefs.HasKey("Highscore"))
-        {
-            highscoreCount = PlayerPrefs.GetFloat("Highscore");
-        }
+		if (PlayerPrefsX.GetFloatArray ("Highscore", 0, 0).Length != 0) {
+			highscoreArray = PlayerPrefsX.GetFloatArray ("Highscore", 0, 0);
+			currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter", 0);
+			highscoreCount = highscoreArray [currentCharacter];
+		} else {
+			highscoreArray = new float[3] { 0, 0, 0 };
+			currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter", 0);
+			highscoreCount = 0;
+		}
+
 
         coinCount = PlayerPrefs.GetInt("Coins");
 	}
@@ -41,7 +51,8 @@ public class ScoreManager : MonoBehaviour {
         if (scoreCount > highscoreCount)
         {
             highscoreCount = scoreCount;
-            PlayerPrefs.SetFloat("Highscore", highscoreCount);
+			highscoreArray [currentCharacter] = highscoreCount;
+			PlayerPrefsX.SetFloatArray("Highscore", highscoreArray);
         }
 
 		scoreText.text = "Score: " + Mathf.Round(scoreCount);

@@ -73,8 +73,6 @@ public class PlayerController : MonoBehaviour {
 
         playerAnimator.SetFloat("Speed", playerBody.velocity.x);
         playerAnimator.SetBool("Grounded", onGround);
-
-
 	}
 
     void OnCollisionEnter2D(Collision2D other)
