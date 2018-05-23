@@ -12,8 +12,8 @@ public class ShopManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.SetCoins();
-		this.SetStore();
+		SetCoins();
+		SetStore();
 		PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "5000", "100000" } );
 		PlayerPrefs.SetInt("CurrentCharacter", 0);
 	}
@@ -23,11 +23,11 @@ public class ShopManager : MonoBehaviour {
 		
 	}
 
-	private void SetCoins() {
+	public void SetCoins() {
 		AmountCoins.text = PlayerPrefs.GetInt( "Coins", 0 ).ToString();
 	}
 
-	private void SetStore() {
+	public void SetStore() {
 		String[] characters = PlayerPrefsX.GetStringArray ("Characters");
 		if (characters.Length == 0) {
 			PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "5000", "100000" } );
