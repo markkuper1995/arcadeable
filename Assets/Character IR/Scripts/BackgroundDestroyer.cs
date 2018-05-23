@@ -15,6 +15,5 @@ public class BackgroundDestroyer : MonoBehaviour {
 	void Update () {
 		if (transform.position.x < backgroundDestructionPoint.transform.position.x)
 			gameObject.SetActive(false);
-		Debug.Log("Transform: " + transform.position.x + " gameobject: " + gameObject);
 	}
 }

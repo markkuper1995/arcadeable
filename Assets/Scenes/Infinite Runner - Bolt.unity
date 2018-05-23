@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 7.5
   startPlayerSpeed: 0
-  increaseSpeed: 1.05
+  increaseSpeed: 1.01
   increaseSpeedMilestone: 50
   startIncreaseSpeedMilestone: 0
   jumpForce: 12

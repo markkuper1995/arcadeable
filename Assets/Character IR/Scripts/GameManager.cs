@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour {
 
 	public Button pauseButton;
 
+	public GameObject[] backgrounds;
+
 	// Use this for initialization
 	void Start () {
 		platformStartPoint = platformGenerator.position;
@@ -45,6 +47,11 @@ public class GameManager : MonoBehaviour {
 
     public IEnumerator RestartGameCo()
     {
+		backgrounds [0].transform.position = new Vector3 ( -24, backgrounds [0].transform.position.y, backgrounds [0].transform.position.z);
+		backgrounds [1].transform.position = new Vector3 ( 0, backgrounds [1].transform.position.y, backgrounds [1].transform.position.z);
+		backgrounds [2].transform.position = new Vector3 ( 24, backgrounds [2].transform.position.y, backgrounds [2].transform.position.z);
+		backgrounds [3].transform.position = new Vector3 ( 48, backgrounds [3].transform.position.y, backgrounds [3].transform.position.z);
+		Debug.Log (backgrounds [0].transform.position.x);
         scoreManager.scoreIncreasing = false;
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);

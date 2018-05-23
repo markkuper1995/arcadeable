@@ -14,8 +14,6 @@ public class BackgroundGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ( "Transform: " + transform.position.x);
-		Debug.Log ( "Generation: " + generationPoint.position.x);
 		if (generationPoint != null ) {
 			foreach (GameObject bg in backgrounds) {
 				if (bg.transform.position.x < generationPoint.position.x)
