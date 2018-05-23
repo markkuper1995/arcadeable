@@ -16,9 +16,9 @@ public class BgObjectGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (generationPoint != null && transform.position.x < generationPoint.position.x) {
-			int index = Random.Range (0, backgrounds.Length - 1);
+			int index = Random.Range (0, backgrounds.Length);
 			while (index == lastIndex) {
-				index = Random.Range (0, backgrounds.Length - 1);
+				index = Random.Range (0, backgrounds.Length);
 			}
 			if (index != lastIndex) {
 				GameObject newBackground = Instantiate(backgrounds[index]);
