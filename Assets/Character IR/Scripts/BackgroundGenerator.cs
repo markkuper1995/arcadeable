@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class BackgroundGenerator : MonoBehaviour {
 
-	public GameObject background;
+	public GameObject[] backgrounds;
 	private Transform generationPoint = null;
 
 	// Use this for initialization
 	void Start () {
-		generationPoint = GameObject.Find("BackgroundGenerationPoint").transform;
+		generationPoint = GameObject.Find("BackgroundDestructionPoint").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (generationPoint != null && transform.position.x < generationPoint.position.x) {
-			GameObject newBackground = Instantiate (background);
-
-			transform.position = new Vector3 (transform.position.x + 46, background.transform.position.y, 2);
-			newBackground.transform.position = transform.position;
+		Debug.Log ( "Transform: " + transform.position.x);
+		Debug.Log ( "Generation: " + generationPoint.position.x);
+		if (generationPoint != null ) {
+			foreach (GameObject bg in backgrounds) {
+				if (bg.transform.position.x < generationPoint.position.x)
+					bg.transform.position = new Vector3 (bg.transform.position.x + 96, bg.transform.position.y, 2);
+			}
 		}
 	}
 }
