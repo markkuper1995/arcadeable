@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     public PlayerController player;
     private Vector3 playerStartPoint;
+    private int deathCount;
 
     private PlatformDestroyer[] platformList;
 
@@ -32,6 +34,11 @@ public class GameManager : MonoBehaviour {
 		backgrounds = backgroundGenerator.backgrounds;
 
         scoreManager = FindObjectOfType<ScoreManager>();
+
+        //Advertisement
+        Advertisement.Initialize("2579476");
+        deathCount = PlayerPrefs.GetInt("deathCount", 0);
+
 	}
 	
 	// Update is called once per frame
@@ -43,6 +50,15 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 0;
 		deathMenu.SetActive(true);
 		pauseButton.gameObject.SetActive (false);
+        deathCount++;
+        PlayerPrefs.SetInt("deathCount", deathCount);
+        if (PlayerPrefs.GetInt("deathCount") == 5)
+        {
+            Advertisement.Show();
+            deathCount = 0;
+            PlayerPrefs.SetInt("deathCount", deathCount);
+        }
+
 	}
 
     public void RestartGame() 
