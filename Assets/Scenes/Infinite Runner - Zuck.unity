@@ -3341,6 +3341,11 @@ MonoBehaviour:
   player: {fileID: 339347502}
   deathMenu: {fileID: 466948538}
   pauseButton: {fileID: 303111280}
+  backgrounds:
+  - {fileID: 2094264199}
+  - {fileID: 567999286}
+  - {fileID: 1224803508}
+  - {fileID: 1113320672}
 --- !u!4 &1413600075
 Transform:
   m_ObjectHideFlags: 0
