@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour {
 
-	public GameObject three;
-	public GameObject two;
-	public GameObject one;
+	private GameObject three;
+	private GameObject two;
+	private GameObject one;
 
-	public static bool afterThreeTwoOne = false;
+	private bool afterThreeTwoOne = false;
 
 	// Use this for initialization
-	void Start () {
-		Time.timeScale = 1;
-		StartCoroutine(ThreeTwoOne());
+	public void Start () {
+		this.SetAfterThreeTwoOne (false);
+		three = GameObject.Find ("3");
+		two = GameObject.Find ("2");
+		one = GameObject.Find ("1");
 	}
 	
 	// Update is called once per frame
@@ -22,8 +24,17 @@ public class StartGame : MonoBehaviour {
 		
 	}
 
+	public bool GetAfterThreeTwoOne() {
+		return this.afterThreeTwoOne;
+	}
+
+	public void SetAfterThreeTwoOne(bool afterTheeTwoOne) {
+		this.afterThreeTwoOne = afterTheeTwoOne;
+	}
+
 	public IEnumerator ThreeTwoOne() {
-		afterThreeTwoOne = false;
+		Time.timeScale = 1;
+		this.SetAfterThreeTwoOne (false);
 
 		three.SetActive (true);
 		two.SetActive (false);	
@@ -42,7 +53,7 @@ public class StartGame : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 
 		one.SetActive (false);
-		afterThreeTwoOne = true;
+		this.SetAfterThreeTwoOne (true);
 
 		yield return null;
 	}

@@ -46,13 +46,12 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        if (StartGame.afterThreeTwoOne == false)
+		if (!gameManager.startGame.GetAfterThreeTwoOne())
             return;
-        //onGround = Physics2D.IsTouchingLayers(playerCollider, IsGround);
 	
         onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, IsGround);
 
-        if (transform.position.x > speedMilestoneCount)
+		if (transform.position.x > speedMilestoneCount)
         {
             speedMilestoneCount += increaseSpeedMilestone;
             increaseSpeedMilestone = increaseSpeedMilestone * increaseSpeed;
@@ -63,10 +62,9 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            if (onGround)
-            {
+			var clickedPoint = Camera.main.ScreenToViewportPoint (Input.mousePosition);
+			if (onGround && !(clickedPoint.x > 0.008 && clickedPoint.x < 0.038 && clickedPoint.y > 0.87 && clickedPoint.y < 0.92))
                 playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
-            }
         }
 
        

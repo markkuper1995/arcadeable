@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour {
         //Advertisement
         Advertisement.Initialize("2579476");
         deathCount = PlayerPrefs.GetInt("deathCount", 0);
+
+		StartCoroutine(startGame.ThreeTwoOne());
 	}
 	
 	// Update is called once per frame
@@ -62,8 +64,14 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	public void ResumeGame() {
+		Time.timeScale = 1;
+		startGame.SetAfterThreeTwoOne (true);
+	}
+
     public void RestartGame() 
     {
+		Time.timeScale = 1;
 		StartCoroutine("RestartGameCo");
     }
 

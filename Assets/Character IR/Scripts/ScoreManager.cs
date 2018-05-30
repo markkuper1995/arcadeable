@@ -21,6 +21,8 @@ public class ScoreManager : MonoBehaviour {
 	private float[] highscoreArray;
 	private int currentCharacter;
 
+	public GameManager gameManager;
+
 	// Use this for initialization
 	void Start () {
 		if (PlayerPrefsX.GetFloatArray ("Highscore", 0, 0).Length != 0) {
@@ -40,7 +42,7 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-		if (StartGame.afterThreeTwoOne == false)
+		if (!gameManager.startGame.GetAfterThreeTwoOne())
 			return;
 		
         if (scoreIncreasing)

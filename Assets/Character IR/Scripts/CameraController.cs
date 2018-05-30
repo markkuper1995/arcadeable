@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public PlayerController player;
+    private PlayerController player;
 
     private Vector3 lastPlayerPosition;
     private float distance;

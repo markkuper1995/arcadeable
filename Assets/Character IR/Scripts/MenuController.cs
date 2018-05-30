@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using AssemblyCSharp;
 
 public class MenuController : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene("MainMenu");
 	}
 
-	public void StartGame(){
+	public void StartIF(){
 		int currentCharacter = PlayerPrefs.GetInt ("CurrentCharacter", 0 );
 
 		switch (currentCharacter) {
@@ -35,20 +36,20 @@ public class MenuController : MonoBehaviour {
 
 	public void RestartGame(){
 		panel.SetActive(false);
-		Time.timeScale = 1;
 		pauseButton.gameObject.SetActive (true);
 		gameManager.RestartGame();
 	}
 
 	public void ResumeGame() {
-		Time.timeScale = 1;
 		panel.SetActive (false);
 		pauseButton.gameObject.SetActive (true);
+		gameManager.ResumeGame();
 	}
 
 	public void PauseGame() {
 		Time.timeScale = 0;
 		pauseButton.gameObject.SetActive (false);
 		panel.SetActive (true);
+		gameManager.startGame.SetAfterThreeTwoOne(false);
 	}
 }
