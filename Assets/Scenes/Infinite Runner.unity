@@ -1714,6 +1714,7 @@ MonoBehaviour:
   - {fileID: 1902427923}
   - {fileID: 1583446583}
   - {fileID: 1804668807}
+  generationPoint: {fileID: 0}
 --- !u!4 &946910693
 Transform:
   m_ObjectHideFlags: 0
@@ -2057,8 +2058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23397d76e8df9fa47bd5a3404ecc3ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuSound: {fileID: 998619518}
+  sound: {fileID: 0}
   buttonMenuSound: {fileID: 0}
+  multiplySounds: 0
 --- !u!82 &998619518
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3145,11 +3147,7 @@ MonoBehaviour:
   player: {fileID: 339347502}
   deathMenu: {fileID: 466948538}
   pauseButton: {fileID: 303111280}
-  backgrounds:
-  - {fileID: 2094264199}
-  - {fileID: 1902427923}
-  - {fileID: 1583446583}
-  - {fileID: 1804668807}
+  startGame: {fileID: 1413600076}
 --- !u!4 &1413600075
 Transform:
   m_ObjectHideFlags: 0
