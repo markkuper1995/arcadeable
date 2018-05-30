@@ -39,7 +39,6 @@ public class SoundSettings : MonoBehaviour {
 			sound.Pause();
 			soundStarted = false;
 		}
-		Debug.Log ( sound.time );
 	}
 
 	public void ToggleMenuSound() {

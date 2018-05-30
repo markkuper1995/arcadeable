@@ -87,7 +87,8 @@ public class GameManager : MonoBehaviour {
         scoreManager.scoreCount = 0;
         scoreManager.scoreIncreasing = true;
 
-		backgroundGenerator.transform.position = new Vector3 (-25, 0, 0);
+		backgroundGenerator.generationPoint.position = new Vector3 (-25, 0, 0);
+		backgroundGenerator.transform.position = new Vector3 (0, 0, 0);
 		float positionX = -24;
 		foreach (GameObject bg in backgrounds) {
 			bg.transform.position = new Vector3 (positionX, bg.transform.position.y, bg.transform.position.z);

@@ -9,16 +9,18 @@ public class BackgroundGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		generationPoint = GameObject.Find("BackgroundDestructionPoint").transform;
+		if(generationPoint == null)
+			generationPoint = GameObject.Find("BackgroundDestructionPoint").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("BackgroundGenerator " + backgrounds [0].transform.position.x);
+		if (generationPoint.position.x < -30)
+			generationPoint.position = new Vector3 (-25, 0, 0);
+		
 		if (generationPoint != null ) {
 			foreach (GameObject bg in backgrounds) {
 				if (bg.transform.position.x < generationPoint.position.x) {
-					Debug.Log (bg.transform.position.x + "." + generationPoint.position.x + "." + transform.position.x);
 					bg.transform.position = new Vector3 (bg.transform.position.x + 96, bg.transform.position.y, 2);
 				}
 			}
