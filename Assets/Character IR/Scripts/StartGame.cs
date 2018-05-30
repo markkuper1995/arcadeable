@@ -5,18 +5,15 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour {
 
-	private GameObject three;
-	private GameObject two;
-	private GameObject one;
+	public GameObject three;
+	public GameObject two;
+	public GameObject one;
 
 	private bool afterThreeTwoOne = false;
 
 	// Use this for initialization
 	public void Start () {
 		this.SetAfterThreeTwoOne (false);
-		three = GameObject.Find ("3");
-		two = GameObject.Find ("2");
-		one = GameObject.Find ("1");
 	}
 	
 	// Update is called once per frame
