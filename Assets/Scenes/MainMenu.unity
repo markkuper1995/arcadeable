@@ -191,7 +191,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 15387937}
-        m_MethodName: StartGame
+        m_MethodName: StartIF
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1390,7 +1390,7 @@ GameObject:
   - component: {fileID: 446155379}
   - component: {fileID: 446155378}
   m_Layer: 0
-  m_Name: backgroundFame
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
