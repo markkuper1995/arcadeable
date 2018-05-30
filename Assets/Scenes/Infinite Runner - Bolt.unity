@@ -3212,6 +3212,7 @@ MonoBehaviour:
   player: {fileID: 339347502}
   deathMenu: {fileID: 466948538}
   pauseButton: {fileID: 303111280}
+  startGame: {fileID: 1413600076}
 --- !u!4 &1413600075
 Transform:
   m_ObjectHideFlags: 0

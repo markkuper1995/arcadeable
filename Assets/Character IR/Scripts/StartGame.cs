@@ -22,7 +22,7 @@ public class StartGame : MonoBehaviour {
 		
 	}
 
-	IEnumerator ThreeTwoOne() {
+	public IEnumerator ThreeTwoOne() {
 		afterThreeTwoOne = false;
 
 		three.SetActive (true);

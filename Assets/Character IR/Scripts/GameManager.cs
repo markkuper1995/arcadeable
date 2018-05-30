@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 
 	public Button pauseButton;
 
+	public StartGame startGame;
+
 	private GameObject[] backgrounds;
 
 	private BackgroundGenerator backgroundGenerator;
@@ -38,7 +40,6 @@ public class GameManager : MonoBehaviour {
         //Advertisement
         Advertisement.Initialize("2579476");
         deathCount = PlayerPrefs.GetInt("deathCount", 0);
-
 	}
 	
 	// Update is called once per frame
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour {
 
     public void RestartGame() 
     {
-        StartCoroutine("RestartGameCo");
+		StartCoroutine("RestartGameCo");
     }
 
     public IEnumerator RestartGameCo()
@@ -94,5 +95,6 @@ public class GameManager : MonoBehaviour {
 			bg.transform.position = new Vector3 (positionX, bg.transform.position.y, bg.transform.position.z);
 			positionX += 24;
 		}
+		StartCoroutine(startGame.ThreeTwoOne());
     }
 }
