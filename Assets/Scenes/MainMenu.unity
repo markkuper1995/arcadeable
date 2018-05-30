@@ -5479,7 +5479,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c839d51aadc2f1e42bde94cc14cd20f0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccb1c31231c23294ab8847783a154197, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -5574,7 +5574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23397d76e8df9fa47bd5a3404ecc3ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuSound: {fileID: 1660651364}
+  sound: {fileID: 1660651364}
   buttonMenuSound: {fileID: 1297431344}
   multiplySounds: 1
 --- !u!1 &1675012232
