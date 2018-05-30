@@ -41,7 +41,7 @@ public class SoundSettings : MonoBehaviour {
 		}
 	}
 
-	public void ToggleMenuSound() {
+	public void ToggleSound() {
 		if (soundPlaying) {
 			//Change all the sound buttons in the app.
 			Text text = buttonMenuSound.transform.Find("Text").GetComponent<Text>();
