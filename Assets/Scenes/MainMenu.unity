@@ -2592,7 +2592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Usian Bolt
+  m_Text: Usain Bolt
 --- !u!222 &785132078
 CanvasRenderer:
   m_ObjectHideFlags: 0
