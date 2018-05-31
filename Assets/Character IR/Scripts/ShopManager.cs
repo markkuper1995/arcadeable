@@ -12,10 +12,10 @@ public class ShopManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SetCoins();
-		SetStore();
 		PlayerPrefsX.SetStringArray ("Characters", new string[] {"In use", "Use", "5000", "100000" } );
 		PlayerPrefs.SetInt("CurrentCharacter", 0);
+		SetCoins();
+		SetStore();
 	}
 	
 	// Update is called once per frame
