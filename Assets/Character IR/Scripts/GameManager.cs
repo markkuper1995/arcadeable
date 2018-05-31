@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -76,6 +77,27 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 1;
 		StartCoroutine("RestartGameCo");
     }
+
+
+    public void RequestContinue()
+    {
+        ShowOptions so  = new ShowOptions();
+        so.resultCallback = HandleShowResult;
+        Advertisement.Show("rewardedVideo", so);
+    }
+
+    public void ContinueGame()
+    {
+        
+        Time.timeScale = 1;
+        startGame.SetAfterThreeTwoOne(true);
+    }
+
+    private void HandleShowResult(ShowResult obj)
+    {
+        throw new NotImplementedException();
+    }
+
 
     public IEnumerator RestartGameCo()
     {

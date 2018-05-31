@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour {
 	public GameManager gameManager;
 	public Button pauseButton;
 
+    private bool continueGame = false;
+
 	public void BackToMainMenu() {
 		SceneManager.LoadScene("MainMenu");
 	}
@@ -38,6 +40,7 @@ public class MenuController : MonoBehaviour {
 		panel.SetActive(false);
 		pauseButton.gameObject.SetActive (true);
 		gameManager.RestartGame();
+        continueGame = false;
 	}
 
 	public void ResumeGame() {
@@ -45,6 +48,17 @@ public class MenuController : MonoBehaviour {
 		pauseButton.gameObject.SetActive (true);
 		gameManager.ResumeGame();
 	}
+
+    public void ContinueGame()
+    {
+        if (continueGame == false)
+        {
+            continueGame = true;
+            panel.SetActive(false);
+            pauseButton.gameObject.SetActive(true);
+            gameManager.ContinueGame();
+        }
+    }
 
 	public void PauseGame() {
 		Time.timeScale = 0;
